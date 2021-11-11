@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="https://vexcodemss--pr24151.repl.co/icon.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>VexCode MSS</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>
+      VexCode Motor Sensor Setup
+    </h1>
+    <br>
+    <button class="btn" onClick="run()">Run</button> <button id="TVCT"class="btn" onClick="CopyFn()">Show Copyable Text</button>
+    <br><br><br>
+    <table class="Itable">
+      <tr>
+        <td>
+          Device Type
+        </td>
+        <td>
+          Name
+        </td>
+        <td>
+          Port
+        </td>
+        <td>
+          Reversed
+        </td>
+        <td>
+          Output
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="dropdown">
+            <button id="type0" class="dropbtn">null</button>
+            <div class="dropdown-content">
+              <button class="dropdown-content2" onClick="settype(0, 0)">Motor</button>
+              <button class="dropdown-content2" onClick="settype(0, 1)">Vision</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="Name0">
+        </td>
+        <td>
+          <input type="text" id="Port0">
+        </td>
+        <td>
+          <input type="checkbox" id="Reversed0">
+        </td>
+        <td>
+          <label id="opt0">vex::undefined = vex::undefined( vex::PORT, false );</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="dropdown">
+            <button id="type1" class="dropbtn">null</button>
+            <div class="dropdown-content">
+              <button class="dropdown-content2" onClick="settype(1, 0)">Motor</button>
+              <button class="dropdown-content2" onClick="settype(1, 1)">Vision</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="Name1">
+        </td>
+        <td>
+          <input type="text" id="Port1">
+        </td>
+        <td>
+          <input type="checkbox" id="Reversed1">
+        </td>
+        <td>
+          <label id="opt1">vex::undefined = vex::undefined( vex::PORT, false );</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="dropdown">
+            <button id="type2" class="dropbtn">null</button>
+            <div class="dropdown-content">
+              <button class="dropdown-content2" onClick="settype(2, 0)">Motor</button>
+              <button class="dropdown-content2" onClick="settype(2, 1)">Vision</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="Name2">
+        </td>
+        <td>
+          <input type="text" id="Port2">
+        </td>
+        <td>
+          <input type="checkbox" id="Reversed2">
+        </td>
+        <td>
+          <label id="opt2">vex::undefined = vex::undefined( vex::PORT, false );</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="dropdown">
+            <button id="type3" class="dropbtn">null</button>
+            <div class="dropdown-content">
+              <button class="dropdown-content2" onClick="settype(3, 0)">Motor</button>
+              <button class="dropdown-content2" onClick="settype(3, 1)">Vision</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="Name3">
+        </td>
+        <td>
+          <input type="text" id="Port3">
+        </td>
+        <td>
+          <input type="checkbox" id="Reversed3">
+        </td>
+        <td>
+          <label id="opt3">vex::undefined = vex::undefined( vex::PORT, false );</label>
+        </td>
+      </tr>
+
+    </table>
+
+    <label id="copyLabel"></label>
+
+    <script src="script.js"></script>
+  </body>
+</html>
