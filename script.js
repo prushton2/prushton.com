@@ -4,6 +4,7 @@ let redirects = [
   //Webpages
   ["Square Quiz", "/squareQuiz"],
   ["VexCode MSS", "/vexCodeMss"],
+  ["Discord Apps", "/discordBots"],
   //Subdomains
   ["Witch Queen Countdown", "https://witchqueencountdown."+domain],
   ["Click me", "https://clickme."+domain],
@@ -19,4 +20,3 @@ function redirect(name) {
     }
   }
 }
-
