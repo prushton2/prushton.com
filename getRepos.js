@@ -65,4 +65,3 @@ if (request.readyState == 4)
     colors = JSON.parse(request.responseText);
     getMyGithub()
 };
-
