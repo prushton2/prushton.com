@@ -1,9 +1,4 @@
-
-var pinnedRepos;
-var colors;
-
-
-function createHTML(name, url, lang, desc) {
+function createHTML(name, url, lang, desc, colors) {
 
     dotColor = colors[lang]["color"]
 
@@ -15,53 +10,24 @@ function createHTML(name, url, lang, desc) {
 }
 
 
-function createPage() {
+const createPage = async() => {
+    let colors = await fetch("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json").then(response => {
+        return response.text()
+    });
+    let pinnedRepos = await fetch("https://gh-pinned-repos-5l2i19um3.vercel.app/?username=prushton2").then(response => {
+        return response.text()
+    });
+    
+    colors = JSON.parse(colors)
+    pinnedRepos = JSON.parse(pinnedRepos)
+
     for(i=0; i<6; i++) {
         let name = pinnedRepos[i]["repo"]
         let url  = pinnedRepos[i]["link"]
         let lang = pinnedRepos[i]["language"]
         let desc = pinnedRepos[i]["description"]
-        document.getElementById("gh"+i.toString()).innerHTML = createHTML(name, url, lang, desc)
+        document.getElementById("gh"+i.toString()).innerHTML = createHTML(name, url, lang, desc, colors)
     }
 }
 
-
-
-
-
-
-
-
-
-
-function makeHttpObject() {
-  try {return new XMLHttpRequest();}
-  catch (error) {}
-  try {return new ActiveXObject("Msxml2.XMLHTTP");}
-  catch (error) {}
-  try {return new ActiveXObject("Microsoft.XMLHTTP");}
-  catch (error) {}
-
-  throw new Error("Could not create HTTP request object.");
-}
-
-function getMyGithub() {
-    var request = makeHttpObject();
-    request.open("GET", "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=prushton2", true);
-    request.send(null);
-    request.onreadystatechange = function() {
-    if (request.readyState == 4)
-        pinnedRepos = JSON.parse(request.responseText);
-        createPage()
-    };
-}
-
-
-var request = makeHttpObject();
-request.open("GET", "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json", true);
-request.send(null);
-request.onreadystatechange = function() {
-if (request.readyState == 4)
-    colors = JSON.parse(request.responseText);
-    getMyGithub()
-};
+createPage()
