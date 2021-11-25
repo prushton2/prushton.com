@@ -2,11 +2,18 @@ function createHTML(name, url, lang, desc, colors) {
 
     dotColor = colors[lang]["color"]
 
-    let button = '<button id="title" onclick=\'window.location.href=" '+url+' "\' class="ibtn"><b>'+name+'</b></button><br>'
-    let description = '<label id="desc">'+desc+'</label><br>'
-    let dot = '<span class="dot" style="background-color: '+dotColor+'"></span>'
-    let language= '<label id="lang">'+lang+'</label>'
-    return button+description+dot+language
+    let newName = ""
+
+    name.split("").forEach((element) => {
+        newName += (element == "." || element == element.toUpperCase()) ? "<wbr>" + element : element;
+    });
+
+
+    let button = `<button id="title" onclick=\'window.location.href="${url}"\' class="ibtn"><b>${newName}</b></button><br>`
+    let description = `<label id="desc">${desc}</label><br>`
+    let dot = `<span class="dot" style="background-color: ${dotColor}"></span>`
+    let language= `<label id="lang">${lang}</label>`
+    return `${button}${description}${dot}${language}`
 }
 
 
@@ -26,7 +33,7 @@ const createPage = async() => {
         let url  = pinnedRepos[i]["link"]
         let lang = pinnedRepos[i]["language"]
         let desc = pinnedRepos[i]["description"]
-        document.getElementById("gh"+i.toString()).innerHTML = createHTML(name, url, lang, desc, colors)
+        document.getElementById(`gh${i.toString()}`).innerHTML = createHTML(name, url, lang, desc, colors)
     }
 }
 
