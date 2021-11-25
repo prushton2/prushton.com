@@ -134,11 +134,25 @@ table.Itable td {
 }
 
 .githubContainer {
-
+  position: absolute;
+  top: 13vh;
 }
 
 .githubRepo {
   padding: 10px; 
   border: 2px solid #555;
-  max-width: 30%;
+  max-width: 50vh;
+}
+
+.website {
+  right:0px;
+  padding: 10px;
+  border: 2px solid #555;
+  max-width: 50vh;
+}
+
+.WebsiteContainer {
+  position: absolute;
+  right: 0px;
+  top: 13vh;
 }
