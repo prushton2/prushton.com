@@ -2,9 +2,6 @@ let output = document.getElementById("output")
 let input = document.getElementById('input');
 
 window.onload = function(){
-    let value = 0;
-    let space_bar = 32;
-    let right_arrow = 39;
     input.focus();
     input.select();
   
@@ -22,15 +19,16 @@ function addToDisplay(text) {
 
 const execute = async() => {
     input = document.getElementById('input');
-    baseURL = "https://api.prushton.repl.co/publicdb/"
+    baseURL = "https://cors-proxy.htmldriven.com/?url=https://api.prushton.com/publicdb/"
     args = input.value.split(" ")
     args = args.join("/")
     
     response = await fetch(baseURL + args).then((data) => {
+        console.log(data.json)
+        addToDisplay(JSON.stringify(data))
         return data
     })
 
-    addToDisplay(response)
 
 }
 
