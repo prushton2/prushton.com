@@ -19,13 +19,13 @@ function addToDisplay(text) {
 
 const execute = async() => {
     input = document.getElementById('input');
-    baseURL = "https://cors-proxy.htmldriven.com/?url=https://api.prushton.com/publicdb/"
+    baseURL = "https://corsanywherepr.herokuapp.com/https://api.prushton.com/publicdb/"
     args = input.value.split(" ")
     args = args.join("/")
     
     response = await fetch(baseURL + args).then((data) => {
-        console.log(data.json)
-        addToDisplay(JSON.stringify(data))
+        console.log(data)
+        addToDisplay(data)
         return data
     })
 
