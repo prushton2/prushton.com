@@ -1,9 +1,19 @@
 let output = document.getElementById("output")
 let input = document.getElementById('input');
 
-window.onload = function(){
+function selectTextBox() {
     input.focus();
     input.select();
+}
+
+document.addEventListener('click', function(event) {
+    selectTextBox();
+}, true); 
+
+window.onload = function(){
+    
+    selectTextBox()
+
   
     window.onkeydown= function(gfg){
         if(gfg.keyCode === 13) {
@@ -21,6 +31,9 @@ window.onload = function(){
         }
     };
 };
+
+
+
 
 function addToDisplay(text) {
     output.innerHTML += text + "<br>"
