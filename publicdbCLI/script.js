@@ -44,12 +44,18 @@ const callDB = async(args) => {
     args = args.join("/")
     
     response = await fetch(baseURL + args).then((data) => {
-            responsejson = data.text().then((value) => {
-                return value
-            });
-            return responsejson;
-        })
-    addToDisplay(response)
+        responsejson = data.text().then((value) => {
+            return value
+        });
+        return responsejson;
+    })
+    
+    response = JSON.parse(response)
+
+    text  = "Command: "+response["Response"]["command"] + "<br>"
+    text += "Key: "+    response["Response"]["key"]     + "<br>"
+    text += response["Response"]["value"] === undefined ? "" : "Value: "+  response["Response"]["value"]   
+    addToDisplay(text)
 
 
 }
