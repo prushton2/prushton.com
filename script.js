@@ -3,6 +3,7 @@ webpages = [
     ["/squareQuiz", "Square Quiz", "A simple quiz on the square of a 2 digit number",],
     ["/vexCodeMss", "Vex Code MSS", "A mock motor sensor setup for VexCode",],
     ["https://clickme.prushton.com", "Click Me", "",],
+    ["/publicdbCLI", "PublicDB CLI", "A CLI to interact with my public database",],
 ]
 
 function createWebpageHTML(name, url, desc) {
