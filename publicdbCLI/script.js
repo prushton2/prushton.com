@@ -43,7 +43,7 @@ const callDB = async(args) => {
     baseURL = "https://api.prushton.com/publicdb/"
     args = args.join("/")
     
-    response = getURLWithoutCors(baseURL + args)
+    response = await getURLWithoutCors(baseURL + args)
     
     response = JSON.parse(response)
 
