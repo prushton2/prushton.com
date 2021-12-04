@@ -40,15 +40,10 @@ function addToDisplay(text) {
 }
 
 const callDB = async(args) => {
-    baseURL = "https://corsanywherepr.herokuapp.com/https://api.prushton.com/publicdb/"
+    baseURL = "https://api.prushton.com/publicdb/"
     args = args.join("/")
     
-    response = await fetch(baseURL + args).then((data) => {
-        responsejson = data.text().then((value) => {
-            return value
-        });
-        return responsejson;
-    })
+    response = getURLWithoutCors(baseURL + args)
     
     response = JSON.parse(response)
 
