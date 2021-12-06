@@ -1,0 +1,30 @@
+head {
+    font-family: "Arial";
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    font-size: 200%; 
+}
+  
+body {
+    font-family: inherit;
+    font-size: 100%;
+    color: #ffffff;
+    background-color: #0d1117;
+}
+
+label {
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+    background-color: inherit;
+    color: inherit;
+    width: 90%;
+    border: none;
+}
+input:focus {
+    outline: none;
+}
