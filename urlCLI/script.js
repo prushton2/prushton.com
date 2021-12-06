@@ -1,7 +1,8 @@
 let output = document.getElementById("output")
 let input = document.getElementById('input');
 
-
+let previousCommands = [""]
+let commandHistoryPos = 0
 
 function selectTextBox() {
     input.focus();
@@ -18,12 +19,31 @@ window.onload = function(){
 
   
     window.onkeydown= function(gfg){
+        console.log(gfg.keyCode)
+        console.log(previousCommands)
         window.localStorage.setItem("baseURL", document.getElementById("baseURL").value)
         if(gfg.keyCode === 13) {
             input = document.getElementById('input');
+            previousCommands.splice(1, 0, input.value);
+            commandHistoryPos = 0
             args = input.value.split(" ")
             updateDisplay();
             callDB(args);
+        }
+        else if(gfg.keyCode == 38) {
+            commandHistoryPos += 1
+            if(commandHistoryPos > previousCommands.length-1) {
+                commandHistoryPos = previousCommands.length-1
+            }
+            document.getElementById("input").value = previousCommands[commandHistoryPos]
+        }
+        else if(gfg.keyCode == 40) {
+            commandHistoryPos -= 1
+            if(commandHistoryPos < 0) {
+                commandHistoryPos = 0
+            }
+            document.getElementById("input").value = previousCommands[commandHistoryPos]
+
         }
     };
 };
