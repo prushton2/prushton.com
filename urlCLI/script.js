@@ -61,10 +61,7 @@ const callDB = async(args) => {
     
     response = await getURLWithoutCors(baseURL + args)
     
-    response = JSON.parse(response)
-
-
-    addToDisplay(JSON.stringify(response))
+    addToDisplay(response)
 
 
 }
@@ -75,18 +72,4 @@ function updateDisplay() {
     command = "> "+input.value+"<br>";
     output.innerHTML += command;
     input.value = "";
-}
-
-function showHelp() {
-    commands = [
-        ["db set [Key] [Value]", "Sets the value to the given key"],
-        ["db get [Key]",         "Gets the value of the given key"],
-        ["db ls",                "Lists all keys"],
-        ["db del [Key]",         "Deletes given key"],
-    ]
-    
-    for (const element of commands) {
-        addToDisplay(element[0]+" | "+element[1])
-    }
-
 }
