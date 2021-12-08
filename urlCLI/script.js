@@ -19,8 +19,6 @@ window.onload = function(){
 
   
     window.onkeydown= function(gfg){
-        console.log(gfg.keyCode)
-        console.log(previousCommands)
         window.localStorage.setItem("baseURL", document.getElementById("baseURL").value)
         if(gfg.keyCode === 13) {
             input = document.getElementById('input');
