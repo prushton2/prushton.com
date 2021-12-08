@@ -22,9 +22,13 @@ window.onload = function(){
         window.localStorage.setItem("baseURL", document.getElementById("baseURL").value)
         if(gfg.keyCode === 13) {
             input = document.getElementById('input');
-            previousCommands.splice(1, 0, input.value);
-            commandHistoryPos = 0
             args = input.value.split(" ")
+
+            if(previousCommands[1] != input.value) {
+                previousCommands.splice(1, 0, input.value);
+            }
+            commandHistoryPos = 0
+            
             updateDisplay();
             callDB(args);
         }
