@@ -54,6 +54,8 @@ window.onload = function(){
 
 
 function addToDisplay(text) {
+    text = text.replace(/<[^>]*>?/gm, '');
+    console.log(text)
     output.innerHTML += text + "<br>"
 }
 
@@ -72,6 +74,6 @@ const callDB = async(args) => {
 function updateDisplay() {
     input = document.getElementById('input');
     command = "> "+input.value+"<br>";
-    output.innerHTML += command;
+    addToDisplay(command);
     input.value = "";
 }
