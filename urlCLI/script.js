@@ -55,6 +55,7 @@ window.onload = function(){
 
 function addToDisplay(text) {
     text = text.replace(/<[^>]*>?/gm, '');
+    text = text.replace(/\n/g, '<br>');
     console.log(text)
     output.innerHTML += text + "<br>"
 }
