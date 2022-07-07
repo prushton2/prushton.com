@@ -1,11 +1,18 @@
-webpages = [
-    ["/discordBots", "Discord Bots", "Some of my project ive done relating to discord",],
-    ["/squareQuiz", "Square Quiz", "A simple quiz on the square of a 2 digit number",],
-    ["/vexCodeMss", "Vex Code MSS", "A mock motor sensor setup for VexCode",],
+import * as config from "./config.js"
+import * as utils from "./utils.js"
+
+let webpages = [
+    ["/yubikey", "Yubikey Verifier", "A tool to verify if the yubikey given is from a registered user",],
+    ["/simpleDB", "Simple DB", "A key value database using yubikey verification",],
     ["https://clickme.prushton.com", "Click Me", "",],
-    ["/publicdbCLI", "PublicDB CLI", "A CLI to interact with my public database",],
-    ["/urlCLI", "Url CLI", "A CLI to interact with any api",],
+    ["/discordBots", "Discord Bots", "Some of my project ive done relating to discord",],
 ]
+
+let showcasedRepos = [
+    "2.5dRenderEngine", "prushton2.github.io", "VexScoringProgram",
+    "DestinyCollections", "DiscordBot", "977Z"
+]
+
 
 function createWebpageHTML(name, url, desc) {
     let button = `<button onclick=\'window.location.href="${url}"\' class="ibtn"><b>${name}</b></button><br>`
@@ -17,7 +24,7 @@ function createWebpageHTML(name, url, desc) {
 
 function createGithubHTML(name, url, lang, desc, colors) {
 
-    dotColor = colors[lang]["color"]
+    let dotColor = colors[lang]["color"]
 
     let newName = ""
 
@@ -38,20 +45,22 @@ const createPage = async() => {
     let colors = await fetch("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json").then(response => {
         return response.text()
     });
-    let pinnedRepos = await fetch("https://gh-pinned-repos-5l2i19um3.vercel.app/?username=prushton2").then(response => {
-        return response.text()
-    });
     
     colors = JSON.parse(colors)
-    pinnedRepos = JSON.parse(pinnedRepos)
 
-    pinnedRepos.forEach((element) => {
-        let name = element["repo"]
-        let url  = element["link"]
-        let lang = element["language"]
-        let desc = element["description"]
+    showcasedRepos.forEach(async(element) => {
+        let repo = await fetch("https://api.github.com/repos/prushton2/"+element).then(response => {
+            return response.text()
+        });
+        repo = JSON.parse(repo);
+        let name = repo["name"]
+        let url  = repo["html_url"]
+        let lang = repo["language"]
+        let desc = repo["description"]
         document.getElementById("githubContainer").innerHTML += createGithubHTML(name, url, lang, desc, colors)
     })
+
+
     webpages.forEach((element) => {
         let url  = element[0]
         let name = element[1]
@@ -60,4 +69,6 @@ const createPage = async() => {
     });
 }
 
-createPage()
+if(utils.isPathName("/index.html") || utils.isPathName("/")) {
+    createPage()
+}
