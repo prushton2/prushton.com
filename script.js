@@ -1,13 +1,15 @@
-webpages = [
-    ["/discordBots", "Discord Bots", "Some of my project ive done relating to discord",],
-    ["/squareQuiz", "Square Quiz", "A simple quiz on the square of a 2 digit number",],
-    ["/vexCodeMss", "Vex Code MSS", "A mock motor sensor setup for VexCode",],
+import * as config from "./config.js"
+import * as utils from "./utils.js"
+
+let webpages = [
+    ["/yubikey", "Yubikey Verifier", "A tool to verify if the yubikey given is from a registered user",],
+    ["/simpleDB", "Simple DB", "A key value database using yubikey verification",],
     ["https://clickme.prushton.com", "Click Me", "",],
-    ["/publicdbCLI", "PublicDB CLI", "A CLI to interact with my public database",],
-    ["/urlCLI", "Url CLI", "A CLI to interact with any api",],
+    ["/discordBots", "Discord Bots", "Some of my project ive done relating to discord",],
 ]
 
-showcasedRepos = [
+
+let showcasedRepos = [
     "2.5dRenderEngine", "prushton2.github.io", "VexScoringProgram",
     "DestinyCollections", "DiscordBot", "977Z"
 ]
@@ -23,7 +25,7 @@ function createWebpageHTML(name, url, desc) {
 
 function createGithubHTML(name, url, lang, desc, colors) {
 
-    dotColor = colors[lang]["color"]
+    let dotColor = colors[lang]["color"]
 
     let newName = ""
 
@@ -46,7 +48,6 @@ const createPage = async() => {
     });
     
     colors = JSON.parse(colors)
-    // pinnedRepos = JSON.parse(pinnedRepos)
 
     showcasedRepos.forEach(async(element) => {
         let repo = await fetch("https://api.github.com/repos/prushton2/"+element).then(response => {
@@ -69,4 +70,6 @@ const createPage = async() => {
     });
 }
 
-createPage()
+if(utils.isPathName("/index.html") || utils.isPathName("/")) {
+    createPage()
+}

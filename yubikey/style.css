@@ -20,10 +20,8 @@ label {
 
 input {
     font-family: inherit;
-    background-color: inherit;
+    background-color: #0f1319;
     color: inherit;
-    width: 90%;
-    border: none;
 }
 input:focus {
     outline: none;
