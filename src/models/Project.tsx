@@ -1,5 +1,11 @@
 export interface Project {
     name: string
-    repo: string
+    repo: Link
+    desc: string
+    url: Link
+}
+
+export interface Link {
+    plaintext: string
     url: string
 }

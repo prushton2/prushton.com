@@ -1,0 +1,10 @@
+.TitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    color: var(--highlight);
+    font-size: xx-large;
+    margin-top: 40px;
+}

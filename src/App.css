@@ -1,0 +1,11 @@
+.AppContainer {
+  /* border: 1px solid red; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  padding-left:  30%;
+  padding-right: 30%;
+  align-items: center;
+  justify-content: center;
+}

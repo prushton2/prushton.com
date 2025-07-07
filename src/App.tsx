@@ -1,19 +1,18 @@
 import './App.css'
 import ProjectComponent from './components/ProjectComponent'
-import type { Project } from './models/Project'
+import TitleComponent from './components/Title'
+import { Projects } from './Data';
+
 
 function App() {
-  const p1 = {
-    name: "Bython",
-    repo: "https://github.com/prushton2/bython",
-    url: "https://pypi.org/project/bython-prushton/"
-  } as Project
-
   return (
-    <>
-      <ProjectComponent project={p1}/>
-    </>
+    <div className='AppContainer'>
+      <TitleComponent text="Projects"/>
+      {Projects.map((v) => {
+        return <ProjectComponent project={v} />
+      })}
+    </div>
   )
 }
 
-export default App
+export default App;

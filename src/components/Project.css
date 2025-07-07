@@ -1,9 +1,24 @@
 .ProjectContainer {
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
     border: 1px solid var(--border);
     border-radius: 5px;
     padding: 10px;
+    width: 100%;
     background-color: var(--bg-light);
+    margin-top: 40px;
+}
+
+.ProjectNameLabel {
+    font-size: xx-large;
     color: var(--highlight);
+}
+
+.ProjectDescLabel {
+    color: var(--text-muted);
+}
+
+.ProjectLink {
+    margin-top: 10px;
+    color: var(--text-muted)
 }
