@@ -1,0 +1,9 @@
+.ProjectContainer {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--bg-light);
+    color: var(--highlight);
+}
