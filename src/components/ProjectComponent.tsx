@@ -1,4 +1,3 @@
-import { useState, type JSX } from "react"
 import type { Project } from "../models/Project"
 import "./Project.css"
 
