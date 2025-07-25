@@ -1,21 +1,58 @@
 .ProjectContainer {
     display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 10px;
-    width: 100%;
-    background-color: var(--bg-light);
-    margin-top: 40px;
+    flex-direction: row;
+    flex-basis: 0%;
+
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (pointer:none), (pointer:coarse) {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .ProjectNameLabel {
-    font-size: xx-large;
-    color: var(--highlight);
+    display: flex;
+    flex-basis: 0%;
+    flex-grow: 1;
+
+    font-size: 2rem;
+    color: var(--text);
+    margin-right: 20px;
+    text-align: left;
+
+    @media (pointer:none), (pointer:coarse) {
+        margin: auto;
+    }
+}
+
+.ProjectInfoContainer {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 2;
+    background-color: var(--bg-light);
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .ProjectDescLabel {
-    color: var(--text-muted);
+    display: flex;
+    flex-basis: 0%;
+    flex-grow: 3;
+    color: var(--text);
+}
+
+.LinkContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
 }
 
 .ProjectLink {
