@@ -14,6 +14,30 @@ export const Projects: Project[] = [
         desc: "A transpiler that allows for curly braces in Python, because Python is awesome but whitespace is awful",
     },
     {
+        name: "Search",
+        repo: {
+            plaintext: "View on Github",
+            url: "https://github.com/prushton2/searchengine"
+        },
+        url: {
+            plaintext: "View on prushton.com",
+            url: "search.prushton.com"
+        },
+        desc: "A fully custom search engine that is built on Rust, Go, and Postgres"
+    },
+    {
+        name: "MBTA",
+        repo: {
+            plaintext: "View on Github",
+            url: "https://github.com/prushton2/mbta"
+        },
+        url: {
+            plaintext: "View on prushton.com",
+            url: "mbta.prushton.com"
+        },
+        desc: "A website showing both live and the past 24 hours of MBTA train data, letting you scroll through the trains at any time"
+    },
+    {
         name: "Hide and Seek",
         repo: {
             plaintext: "View on Github",
@@ -24,17 +48,5 @@ export const Projects: Project[] = [
             url: "https://hideandseek.prushton.com/"
         },
         desc: "A website recreating the hide and seek game played by the 'Jet Lag: The Game' Youtube Channel",
-    },
-    {
-        name: "Trainlapse",
-        repo: {
-            plaintext: "View on Github",
-            url: "https://github.com/prushton2/trainlapse"
-        },
-        url: {
-            plaintext: "View on prushton.com",
-            url: "https://trainlapse.prushton.com/"
-        },
-        desc: "A website storing the last 24 hours of MBTA Commuter rail train positions, letting you timelapse through the data",
     }
 ]
