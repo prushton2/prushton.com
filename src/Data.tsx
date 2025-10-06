@@ -21,7 +21,7 @@ export const Projects: Project[] = [
         },
         url: {
             plaintext: "View on prushton.com",
-            url: "search.prushton.com"
+            url: "https://search.prushton.com"
         },
         desc: "A fully custom search engine that is built on Rust, Go, and Postgres"
     },
@@ -33,7 +33,7 @@ export const Projects: Project[] = [
         },
         url: {
             plaintext: "View on prushton.com",
-            url: "mbta.prushton.com"
+            url: "https://mbta.prushton.com"
         },
         desc: "A website showing both live and the past 24 hours of MBTA train data, letting you scroll through the trains at any time"
     },
