@@ -38,6 +38,18 @@ export const Projects: Project[] = [
         desc: "A website showing both live and the past 24 hours of MBTA train data, letting you scroll through the trains at any time"
     },
     {
+        name: "Randochess",
+        repo: {
+            plaintext: "View on Github",
+            url: "https://github.com/prushton2/randochess"
+        },
+        url: {
+            plaintext: "View on prushton.com",
+            url: "https://randochess.prushton.com/"
+        },
+        desc: "A Chess game that features alternate rulesets to shake up gameplay",
+    },
+    {
         name: "Hide and Seek",
         repo: {
             plaintext: "View on Github",
