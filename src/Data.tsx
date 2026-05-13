@@ -14,7 +14,19 @@ export const Projects: Project[] = [
         desc: "A transpiler that allows for curly braces in Python, because Python is awesome but whitespace is awful",
     },
     {
-        name: "Search",
+        name: "Render Engine",
+        repo: {
+            plaintext: "View on Github",
+            url: "https://github.com/prushton2/renderengine"
+        },
+        url:  {
+            plaintext: "Download latest release",
+            url: "https://github.com/prushton2/renderengine/releases/latest"
+        },
+        desc: "A 3D raytracing render engine written in Rust and WGSL",
+    },
+    {
+        name: "Search Engine",
         repo: {
             plaintext: "View on Github",
             url: "https://github.com/prushton2/searchengine"
@@ -48,17 +60,5 @@ export const Projects: Project[] = [
             url: "https://randochess.prushton.com/"
         },
         desc: "A Chess game that features alternate rulesets to shake up gameplay",
-    },
-    {
-        name: "Hide and Seek",
-        repo: {
-            plaintext: "View on Github",
-            url: "https://github.com/prushton2/hide-and-seek"
-        },
-        url: {
-            plaintext: "View on prushton.com",
-            url: "https://hideandseek.prushton.com/"
-        },
-        desc: "A website recreating the hide and seek game played by the 'Jet Lag: The Game' Youtube Channel",
     }
 ]
