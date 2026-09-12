@@ -1,8 +1,13 @@
 import type { Project } from "../models/Project"
 import "./Project.css"
 
-function ProjectComponent({project}: {project: Project}) {
+function ProjectComponent({projects}: {projects: Project[]}) {
+    return <>
+        {projects.map((e) => <Project project={e}/>)}
+    </>
+}
 
+function Project({project}: {project: Project}) {
     return <div className="ProjectContainer">
         <label className="ProjectNameLabel">{project.name}</label>
         <div className="ProjectInfoContainer">
@@ -16,3 +21,4 @@ function ProjectComponent({project}: {project: Project}) {
 }
 
 export default ProjectComponent
+

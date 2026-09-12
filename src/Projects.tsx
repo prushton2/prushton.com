@@ -26,6 +26,18 @@ export const Projects: Project[] = [
         desc: "A 3D raytracing render engine written in Rust and WGSL",
     },
     {
+        name: "Waydraw",
+        repo: {
+            plaintext: "View on Github",
+            url: "https://github.com/prushton2/waydraw"
+        },
+        url:  {
+            plaintext: "Download latest release",
+            url: "https://github.com/prushton2/waydraw/releases/latest"
+        },
+        desc: "A peer-to-peer remote mouse control app letting you use a touchscreen laptop as a drawing tablet",
+    },
+    {
         name: "Search Engine",
         repo: {
             plaintext: "View on Github",

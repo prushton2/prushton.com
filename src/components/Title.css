@@ -8,3 +8,8 @@
     font-size: xx-large;
     margin-top: 40px;
 }
+
+.TitleContainer h3 {
+    padding: 0;
+    margin: 0;
+}

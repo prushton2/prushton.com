@@ -2,7 +2,7 @@ import "./Title.css"
 
 function TitleComponent({text}: {text: string}) {
     return <div className="TitleContainer">
-        {text}
+        <h3>{text}</h3>
     </div>
 }
 

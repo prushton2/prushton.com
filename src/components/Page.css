@@ -1,0 +1,87 @@
+.PageContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+
+    @media (pointer:none), (pointer:coarse) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.Page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    background-color: var(--bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.PageRepoIcon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.PageRepoIcon:hover {
+    opacity: 1;
+}
+
+.PageNameLabel {
+    display: flex;
+    flex-basis: 0%;
+    flex-grow: 1;
+
+    font-size: 2rem;
+    color: var(--text);
+    margin-right: 20px;
+    text-align: left;
+
+    @media (pointer:none), (pointer:coarse) {
+        margin: auto;
+    }
+}
+
+.PageInfoContainer {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 0%;
+    flex-grow: 2;
+    background-color: var(--bg-light);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.PageDescLabel {
+    display: flex;
+    flex-basis: 0%;
+    flex-grow: 3;
+    color: var(--text);
+}
+
+.LinkContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+}
+
+.PageLink {
+    margin-top: 10px;
+    color: var(--text-muted)
+}
